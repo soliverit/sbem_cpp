@@ -85,10 +85,8 @@ SbemModel SbemModel::parseInpContent(const std::string& content) {
 
 			"Zones without heating or cooling" = HVAC-SYSTEM
 				TYPE	= No Heating or Cooling
-			..
-		
+			..	
 		To parse it the folllowing steps are taken:
-
 	*/
 	// Tracking objects
 	std::shared_ptr<SbemDoor>		currentDoor;
@@ -272,3 +270,70 @@ std::vector<SbemError> SbemModel::getErrors(){
 	return errorsClone;
 }
 void SbemModel::dropRecUsers(){recUsers.clear(); }
+/*
+	Instance methods
+*/
+/*=== Building properties ===*/
+float SbemModel::electricEquivalentEmissionFactor() {
+	return 0.0;
+}
+float SbemModel::electricEquivalenEmissionFactorCool() {
+	return 0.0;
+}
+// Areas
+float SbemModel::area() {
+	float area	= 0;
+	for(size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		area	+= hvacs.objects[hvacID]->area();
+	return area;
+}
+float SbemModel::coolArea() {
+	float area = 0;
+	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		if(hvacs.objects[hvacID]->hasCooling())
+			area += hvacs.objects[hvacID]->area();
+	return area;
+}
+float SbemModel::heatedArea() {
+	return 0.0;
+}
+float SbemModel::mechVentArea() {
+	return 0.0;
+}
+float SbemModel::mechVentAreaCool() {
+	return 0.0;
+}
+float SbemModel::wallArea() {
+	return 0.0;
+}
+float SbemModel::wallAreaCool() {
+	return 0.0;
+}
+float SbemModel::windowArea() {
+	return 0.0;
+}
+float SbemModel::windowAreaCool() {
+	return 0.0;
+}
+// Envelopes
+float SbemModel::averageWallUValue() {
+	return 0.0;
+}
+float SbemModel::averageWallUValueCool() {
+	return 0.0;
+}
+float SbemModel::averageWindowUValue() {
+	return 0.0;
+}
+float SbemModel::averageWindowUValueCool() {
+	return 0.0;
+}
+//- Equivalents
+float SbemModel::electricEquivalentAverageWallUValue() {
+	return 0.0;
+}
+float SbemModel::electricEquivalentAverageWindoeUValue() {
+	return 0.0;
+}
+// Misc
+void SbemModel::mergeObjectDefaults(){};

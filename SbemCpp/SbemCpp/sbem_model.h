@@ -63,6 +63,45 @@ public:
 	/*=== Static members ===*/
 	static const std::string MIN_INP;
 	/*=== Instance methods ===*/
+	/*-- Building property getters --*/
+	// Factors
+	float electricEquivalentEmissionFactor();
+	float electricEquivalenEmissionFactorCool();
+	// Areas
+	float area();
+	float coolArea();
+	float heatedArea();
+	float mechVentArea();
+	float mechVentAreaCool();
+	float wallArea();
+	float wallAreaCool();
+	float windowArea();
+	float windowAreaCool();
+	// Envelopes
+	float averageWallUValue();
+	float averageWallUValueCool();
+	float averageWindowUValue();
+	float averageWindowUValueCool();
+	//- Equivalents
+	float electricEquivalentAverageWallUValue();
+	float electricEquivalentAverageWindoeUValue();
+	
+	// Heating and cooling
+	float averageSSEFF();
+	float averageCoolSSEER();
+	float averageCoolGenSEER();
+	//- Equivalents
+	float electricEquivalentSSEFF();
+
+	// Ventilation 
+	float freshAirRate();
+	// Auxiliary
+
+	// Lighting
+	float lightingPowerDensity();
+	
+
+	/*-- Common methods --*/
 	std::string toString();
 	/* Something went wrong, somewhere. Add a note of it*/
 	void addError(int errorCode, std::string errorMessage);
@@ -97,6 +136,7 @@ public:
 	void mergeObjectDefaults();
 	std::vector<SbemError> getErrors();
 	/*=== Instance members ===*/
+	// SBEM Objects
 	SbemGeneral								general;
 	SbemCompliance							compliance;
 	SbemRecProject							recProject;
@@ -111,10 +151,11 @@ public:
 	SbemObjectSet<SbemHvacSystem>			hvacs;			
 	SbemObjectSet<SbemRecUser>				recUsers;
 	SbemObjectSet<SbemImprovementMeasure>	improvementMeasures;
+
 protected:
-	bool									hasSes;
-	bool									hasPvs;
-	bool									hasCchpGenerator;
-	bool									hasWindGenerator;
-	std::vector<SbemError>					errors;
+	bool					hasSes;
+	bool					hasPvs;
+	bool					hasCchpGenerator;
+	bool					hasWindGenerator;
+	std::vector<SbemError>	errors;
 };

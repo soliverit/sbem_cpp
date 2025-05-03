@@ -208,6 +208,7 @@ SbemModel SbemModel::parseInpContent(const std::string& content) {
 	/*
 		Send it home... and do whatever finishing moves.
 	*/
+	std::cout << "\nDFJDSLFJ:DSJFL:KSDJFLKJSDKLJF\nKLJDFJSDFJLSDJFLKJSDL:KFJ\nJDFKJDSLJFLSDJFKLSDJF";
 	return model;
 }
 SbemModel SbemModel::parseInpFile(const std::string& path) {
@@ -298,7 +299,7 @@ float SbemModel::heatedArea() {
 	return 0.0;
 }
 float SbemModel::mechVentArea() {
-	return 0.0;
+	return 0;
 }
 float SbemModel::mechVentAreaCool() {
 	return 0.0;
@@ -335,5 +336,19 @@ float SbemModel::electricEquivalentAverageWallUValue() {
 float SbemModel::electricEquivalentAverageWindoeUValue() {
 	return 0.0;
 }
+// Heating and cooling
+float SbemModel::averageSSEFF(){return 0;}
+float SbemModel::averageCoolSSEER() { return 0; };
+float SbemModel::averageCoolGenSEER() { return 0; };
+//- Equivalents
+float SbemModel::electricEquivalentSSEFF() { return 0; };
+
+// Ventilation 
+float SbemModel::freshAirRate() { return 0; };
+// Auxiliary
+
+// Lighting
+float SbemModel::lightingPowerDensity() { return 0; };
+
 // Misc
 void SbemModel::mergeObjectDefaults(){};

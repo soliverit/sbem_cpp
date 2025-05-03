@@ -3,6 +3,7 @@
 ===*/
 // Native
 #include <iostream>	// TODO: Remove me after testing
+#include "regex"
 // Project
 #include "sbem_object.h"
 
@@ -10,7 +11,7 @@
 SbemObject::SbemObject(){}
 SbemObject::SbemObject(std::string objectName) : name(objectName) {}
 SbemObject::SbemObject(std::string objectName, std::vector<std::string> propertyStrings) : name(objectName) {
-	
+	static const std::regex numberPattern(R"(^-?\d+(\.\d+)?$)");
 	for (size_t propertyStringID = 0; propertyStringID < propertyStrings.size(); propertyStringID++) {
 		std::string property = propertyStrings[propertyStringID];
 		// Must not be zero-length
@@ -33,7 +34,11 @@ SbemObject::SbemObject(std::string objectName, std::vector<std::string> property
 		size_t valueStart		= value.find_first_not_of(" \t\r\n");
 		size_t valueEnd			= value.find_last_not_of(" \t\r\n");
 		value					= value.substr(valueStart, valueEnd - valueStart + 1);	
-		addStringProperty(key, value);
+		
+		if(std::regex_match(value, numberPattern))
+			addNumericProperty(property, std::stof(value));
+		else
+			addStringProperty(key, value);
 	}
 }
 

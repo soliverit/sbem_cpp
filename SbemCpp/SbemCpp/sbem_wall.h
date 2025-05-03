@@ -37,9 +37,20 @@ public:
 	/*=== Static methods===*/
 	/* Create a basic instance */
 	static SbemWall createBasic(std::string name);
-	/*=== Static methods ===*/
+	/*=== Static members ===*/
 	/* SBEM object name WALL */
 	static const std::string OBJECT_NAME;
+	static const std::string EXTERIOR;
+	static const std::string STRONGLY_VENTILATED_SPACES;
+	static const std::string UNHEATED_ADJOINING_SPACE;
+	static const std::string CONDITIONED_ADJOINING_SPACE;
+	static const std::string UNDERGROUND;
+	static const std::string SAME_SPACE;
+
+	static const std::string WALL;
+	static const std::string ROOF;
+	static const std::string FLOOR_OR_CEILING;
+	static const std::string DOOR;
 	/*=== Instance methods ===*/
 	/* Walls can have doors: Add a door to this wall */
 	void addDoor(SbemDoor door);

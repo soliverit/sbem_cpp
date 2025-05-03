@@ -36,7 +36,7 @@ public:
         objects.clear();
         dictionary.clear();
     }
-
+    
     std::shared_ptr<T> at(size_t index) const {
         if (index >= objects.size()) return nullptr;
         return objects[index];
@@ -53,6 +53,13 @@ public:
             if (predicate(*obj)) {
                 result.push(obj);
             }
+        }
+        return result;
+    }
+    float sum(const std::function<bool(const T&)>& func) const {
+        float result;
+        for (const auto& obj : objects) {
+            result  += func(obj);
         }
         return result;
     }

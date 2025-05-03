@@ -7,6 +7,7 @@
 // Project
 #include "sbem_object.h"
 #include "sbem_wall.h"
+#include "sbem_activity_data.h"
 /*
 	SBEM Zone
 
@@ -82,6 +83,7 @@ public:
 	*/
 	std::string toString();
 	/*=== Instance members ===*/
+	SbemActivityData activity;
 	/* Zones always have walls. Store them here */
 	SbemObjectSet<SbemWall> walls;
 	/*=== Getters ===*/ 

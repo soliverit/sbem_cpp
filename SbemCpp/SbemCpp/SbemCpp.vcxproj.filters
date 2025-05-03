@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SbemCpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lighting_replacement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_building_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_cchp_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_compliance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_construction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_dhw_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_door.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_door_tm_bridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_enum_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_epc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_general.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_glass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_hvac_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_improvement_measure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_improver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_int_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_numeric_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_object_set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_property_error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_pvs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_rec_project.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_rec_user_.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_ses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_shower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_string_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_enum_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_float_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_int_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_validator_string_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_wall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_wind_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_window_tm_bridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbem_zone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lighting_replacement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_building_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_cchp_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_compliance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_construction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_dhw_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_door.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_door_tm_bridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_enum_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_epc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_general.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_glass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_hvac_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_improvement_measure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_improver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_int_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_numeric_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_object_set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_property_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_pvs - Copy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_pvs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_rec_project.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_rec_user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_ses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_shower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_string_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_enum_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_float_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_int_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_validator_string_property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_wind_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_window_tm_bridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sbem_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

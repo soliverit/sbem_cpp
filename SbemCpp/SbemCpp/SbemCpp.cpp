@@ -41,6 +41,9 @@ int main()
 			/*
 				Play with features
 			*/
+			/*float areas[4] = {model.area(), model.wallArea(), model.windowArea(), model.wallSurfaceArea()};
+			std::cout << "\n";
+			std::cout << areas;*/
 			i++;
 		}
 	}

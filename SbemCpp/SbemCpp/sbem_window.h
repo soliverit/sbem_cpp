@@ -49,7 +49,7 @@ public:
 	std::string toString();
 	/*=== Getters ===*/
 	/* Get the area: AREA * MULTIPLIER */
-	float getArea();
+	float area();
 protected:
 	/*=== Instance members ===*/
 	/* The GLASS that defines thermal properties */
@@ -58,4 +58,6 @@ protected:
 	bool				addedThermalBridge;
 	/* Some window shave thermal bridge objects. It's stroed here */
 	SbemWindowTmBridge	tmBridge;
+	bool	_gotArea	= false;
+	float	_area		= false;
 };

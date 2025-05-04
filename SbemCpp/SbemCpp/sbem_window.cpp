@@ -21,12 +21,16 @@ SbemWindow SbemWindow::createBasic(std::string name) {
 // Constants
 const std::string SbemWindow::OBJECT_NAME = "WINDOW";
 /*=== Getters ===*/
-float SbemWindow::getArea() {
+float SbemWindow::area() {
+	if(_gotArea)
+		return _area;
 	// Some windows represent multiple windows. It's stupid in the context of SBEM but since it's there we need to deal with it. 
 	if (hasNumericProperty("MULTIPLIER"))
-		return getNumericProperty("AREA")->getValue();
+		_area = getNumericProperty("AREA")->getValue() * getNumericProperty("MULTIPLIER)")->getValue();
 	else
-		return getNumericProperty("AREA")->getValue() * getNumericProperty("MULTIPLIER)")->getValue();
+		_area = getNumericProperty("AREA")->getValue();
+	_gotArea = true;
+	return _area;
 }
 /*=== Setters ===*/
 void SbemWindow::setThermalBridge(SbemWindowTmBridge thermalBridge) {

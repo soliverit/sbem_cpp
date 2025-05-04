@@ -3,12 +3,14 @@
 	Includes
 ===*/
 // Native
-
+#include <string>
+#include <vector>
+#include <memory>  // For shared_ptr
 // Project
-#include "hvac_system_type.h"
 #include "sbem_object.h"
-#include "sbem_object_set.h"
-#include "sbem_zone.h"
+//#include "hvac_system_type.h"
+//#include "sbem_zone.h"
+//#include "sbem_object_set.h"
 /*
 	SBEM HVAC system
 
@@ -30,6 +32,7 @@
 		SFP-CHECK = NO
 
 */
+
 class SbemHvacSystem : public SbemObject {
 	
 public:
@@ -110,12 +113,15 @@ public:
 		addZone and removeZone methods. Which increase or decrease the area,
 		respectively.
 	*/
-	float area();
-	//-> Has things
-	bool hasCooling();
-	bool hasHeating();
-	bool hasMechanicalVentiliation();
-	bool hasMechanicalVentilationAndCooling();
+	//float area();
+	//float wallArea();
+	//float wallSurfaceArea();
+	//float windowArea();
+	////-> Has things
+	//bool hasCooling();
+	//bool hasHeating();
+	//bool hasMechanicalVentiliation();
+	//bool hasMechanicalVentilationAndCooling();
 
 	/*=== The rest ===*/
 	/*
@@ -131,5 +137,10 @@ protected:
 	/*=== Instance members ===*/
 	/* Total area served by system. Managed by addZone and removeZone */
 	float _area;
+	//float _windowArea;
+	//bool _gotWindowArea	= false;
+	//float _wallArea;
+	//float _wallSurfaceArea;
+	//bool _gotWallArea	= false;
 	
 };

@@ -22,6 +22,24 @@ SbemZone::SbemZone(std::string objectName, std::vector<std::string> propertyStri
 const std::string SbemZone::OBJECT_NAME = "ZONE";
 /*=== Getters ===*/
 float SbemZone::area() {return _area;}
+float SbemZone::windowArea() {
+	wallArea();
+	return _windowArea;
+}
+float SbemZone::wallArea() {
+	if(_gotWallArea)
+		return _wallArea;
+	for(size_t wallID = 0; wallID < walls.size(); wallID++){
+		_wallArea			+= walls.objects[wallID]->area();
+		_wallSurfaceArea	+= walls.objects[wallID]->surfaceArea();
+		_windowArea			+= walls.objects[wallID]->windowArea();
+	}
+	_gotWallArea	= true;
+	return _wallArea;
+}
+float SbemZone::wallSurfaceArea() {
+	return wallArea() - _windowArea;
+}
 /*=== Setters ===*/
 
 /*=== The rest ===*/

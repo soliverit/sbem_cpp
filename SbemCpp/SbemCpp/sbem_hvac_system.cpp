@@ -1,7 +1,7 @@
 #include "sbem_hvac_system.h"
 
 /*=== CONSTANTS ===*/
-#pragma once
+
 #include <string>
 // HVAC types
 const std::string SbemHvacSystem::NO_HEATING_OR_COOLING = "No Heating or Cooling";
@@ -79,8 +79,27 @@ SbemHvacSystem SbemHvacSystem::createBasic(std::string name) {
 /*=== Static members ===*/
 const std::string SbemHvacSystem::OBJECT_NAME = "HVAC-SYSTEM";
 /*=== Getters ===*/
+/*=========== Areas ============*/
 
-float SbemHvacSystem::area() { return _area; }
+//float SbemHvacSystem::area() { return _area; }
+//float SbemHvacSystem::wallArea() {
+//	float totalArea;
+//	for(size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+//		totalArea	+= zones.objects[zoneID]->wallArea();
+//	return totalArea;
+//}
+//float SbemHvacSystem::wallSurfaceArea() {
+//	float totalArea;
+//	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+//		totalArea += zones.objects[zoneID]->wallSurfaceArea();
+//	return totalArea;
+//}
+//float SbemHvacSystem::windowArea() {
+//	float totalArea;
+//	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+//		totalArea += zones.objects[zoneID]->windowArea();
+//	return totalArea;
+//}
 /*=== Setters ===*/
 void SbemHvacSystem::addZone(SbemZone zone) {
 	zones.push(std::make_shared<SbemZone>(zone));
@@ -100,7 +119,7 @@ HvacSystemType SbemHvacSystem::hvacSystemType() {
 //=== Has things methods === //
 
 //-> Has things
-bool SbemHvacSystem::hasCooling() {
+/*bool Sb*//*emHvacSystem::hasCooling() {
 	return hvacSystemType().hasCooling();
 }
 bool SbemHvacSystem::hasHeating() {
@@ -111,5 +130,5 @@ bool SbemHvacSystem::hasMechanicalVentiliation() {
 }
 bool SbemHvacSystem::hasMechanicalVentilationAndCooling() {
 	return true;
-}
+}*/
 /*=== The rest ===*/ 

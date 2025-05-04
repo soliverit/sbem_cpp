@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 // Project
+
 #include "sbem_building_data.h"
 #include "sbem_cchp_generator.h"
 #include "sbem_compliance.h"
@@ -74,7 +75,9 @@ public:
 	float mechVentArea();
 	float mechVentAreaCool();
 	float wallArea();
+	float wallSurfaceArea();
 	float wallAreaCool();
+	float wallSurfaceAreaCool();
 	float windowArea();
 	float windowAreaCool();
 	// Envelopes
@@ -157,5 +160,8 @@ protected:
 	bool					hasPvs;
 	bool					hasCchpGenerator;
 	bool					hasWindGenerator;
+	float					_wallArea;
+	float					_wallSurfaceArea;
+	float					_windowArea;
 	std::vector<SbemError>	errors;
 };

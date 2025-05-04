@@ -1,13 +1,15 @@
 #pragma once
-#include "iostream"
-#include "unordered_map"
+#include <iostream>
+#include <unordered_map>
 struct HvacSystemType {
     /* Static members */
     static std::unordered_map<std::string, HvacSystemType> DICTIONARY;
+    static std::string NO_HEATING_OR_COOLING;
     static std::string NO_COOLING_TEXT;
     static std::string NO_MECH_VENTILATION_TEXT;
     /* Instance methods */
     bool hasCooling() const;
+    bool hasHeating() const;
     bool hasMechanicalVentilation() const;
     /* Instance members */
     float ID;

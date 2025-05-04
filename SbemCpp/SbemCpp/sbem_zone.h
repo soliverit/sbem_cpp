@@ -89,6 +89,13 @@ public:
 	/*=== Getters ===*/ 
 	/* Get AREA * MULTIPLIER */
 	float area();
+	float wallArea();
+	float wallSurfaceArea();
+	float windowArea();
 protected:
 	float _area;
-};
+	float _wallArea;
+	float _wallSurfaceArea;
+	float _windowArea;
+	bool _gotWallArea = false;
+}

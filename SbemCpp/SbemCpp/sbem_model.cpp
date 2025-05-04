@@ -295,15 +295,39 @@ float SbemModel::coolArea() {
 	return area;
 }
 float SbemModel::heatedArea() {
-	return 0.0;
+	float area = 0;
+	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		if (hvacs.objects[hvacID]->hasHeating())
+			area += hvacs.objects[hvacID]->area();
+	return area;
 }
 float SbemModel::mechVentArea() {
-	return 0;
+	float area = 0;
+	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		if (hvacs.objects[hvacID]->hasMechanicalVentiliation())
+			area += hvacs.objects[hvacID]->area();
+	return area;
 }
 float SbemModel::mechVentAreaCool() {
-	return 0.0;
+	float area = 0;
+	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		if (hvacs.objects[hvacID]->hasCooling() && hvacs.objects[hvacID]->hasMechanicalVentiliation())
+			area += hvacs.objects[hvacID]->area();
+	return area;
 }
 float SbemModel::wallArea() {
+	float totalArea;
+	for(size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		totalArea	+= hvacs.objects[hvacID]->wallArea();
+	return totalArea;
+}
+float SbemModel::wallSurfaceArea() {
+	float totalArea;
+	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
+		totalArea += hvacs.objects[hvacID]->wallSurfaceArea();
+	return totalArea;
+}
+float SbemModel::wallSurfaceAreaCool() {
 	return 0.0;
 }
 float SbemModel::wallAreaCool() {

@@ -34,13 +34,26 @@ const std::string SbemWall::FLOOR_OR_CEILING			= "Floor or Ceiling";
 const std::string SbemWall::DOOR						= "Door";
 
 /*=== Getters ===*/
-float SbemWall::getArea() { 
+float SbemWall::area() { 
+	if(_gotArea)
+		return _area;
+	for(size_t windowID = 0; windowID < windows.size(); windowID++)
+		_windowArea	+= windows.objects[windowID]->area();
 	// Some walls represent multiple walls. Pointless but we need to handle it anyway.
-	if (hasNumericProperty("MULTIPLIER"))
-		return getNumericProperty("AREA")->getValue();
-	else
+	if(hasNumericProperty("MULTIPLIER"))
 		return getNumericProperty("AREA")->getValue() * getNumericProperty("MULTIPLIER)")->getValue();
-;}
+	else
+		getNumericProperty("AREA")->getValue();
+	_gotArea	= true;
+	return _area;
+}
+float SbemWall::surfaceArea() {
+	return area() - _windowArea;
+}
+float SbemWall::windowArea() {
+	area();	// Call the lazy calculator
+	return _windowArea;
+}
 /*=== Setters ===*/
 void SbemWall::addDoor(SbemDoor door) { doors.push(std::make_shared<SbemDoor>(door)); }
 void SbemWall::addWindow(SbemWindow window) { windows.push(std::make_shared<SbemWindow>(window)); }

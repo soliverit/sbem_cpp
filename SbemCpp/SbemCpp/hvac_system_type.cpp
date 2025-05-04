@@ -1,6 +1,7 @@
 #include "hvac_system_type.h"
 /* Constructors */
 /* Static members */
+std::string HvacSystemType::NO_HEATING_OR_COOLING       ="No Heating or Cooling";
 std::string HvacSystemType::NO_COOLING_TEXT             = "This HVAC system does not provide cooling";
 std::string HvacSystemType::NO_MECH_VENTILATION_TEXT    = "This HVAC system does not provide ventilation";
 std::unordered_map<std::string, HvacSystemType> HvacSystemType::DICTIONARY = {
@@ -38,5 +39,6 @@ std::unordered_map<std::string, HvacSystemType> HvacSystemType::DICTIONARY = {
     {"Passive chilled beams", HvacSystemType{36, -1, "Passive chilled beams", 2, 2, true, 1.68, 0.56, 1, 2, 1.068, -0.023, 3.0, 0.981, 0.095, 0.2, 2.0, 1.0, 0.95, 1, 0.938, 0.021, 3.0, 0.977, 0.113, 0.2, 0.65, 1, 0.95, 1, 0.25, 0.25, 3.0, 0.875, 0.625, 0.2, 1, 0.95, 1, "The combination of a chilled ceiling (or passive chilled beam) system with a separate low-level, low volume supply of cooled ventilation air. Heating assumed to be by separate LTHW system.", "", "", "", "Ventilation is defined at HVAC level", ""}},
 };
 /* Instance methods */
+bool HvacSystemType::hasHeating() const{return CODE != NO_HEATING_OR_COOLING;}
 bool HvacSystemType::hasCooling() const  {return HVAC_cool_text != NO_COOLING_TEXT;}
 bool HvacSystemType::hasMechanicalVentilation() const{return HVAC_vent_text != NO_MECH_VENTILATION_TEXT;}

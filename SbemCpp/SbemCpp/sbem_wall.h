@@ -78,7 +78,13 @@ public:
 
 		WALL area is the sum of the AREA * MULTIPLIER - sum(doors.area) - sum(windows.area) 
 	*/
-	float getArea();
+	float area();
+	/* Area including window area*/
+	float surfaceArea();
+	float windowArea();
 protected:
 	std::shared_ptr<SbemConstruction> construction;
+	bool _gotArea = false;
+	float _area;
+	float _windowArea;
 };

@@ -38,10 +38,9 @@ int main()
 					std::cout << "\n" << errors[i].message;
 				}
 			}
-			std::ofstream myfile;
-			myfile.open(TEST_OUT + std::to_string(i));
-			myfile << model.toString();
-			myfile.close();
+			/*
+				Play with features
+			*/
 			i++;
 		}
 	}

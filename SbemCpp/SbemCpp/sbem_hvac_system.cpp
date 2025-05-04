@@ -79,11 +79,12 @@ SbemHvacSystem SbemHvacSystem::createBasic(std::string name) {
 /*=== Static members ===*/
 const std::string SbemHvacSystem::OBJECT_NAME = "HVAC-SYSTEM";
 /*=== Getters ===*/
+
 float SbemHvacSystem::area() { return _area; }
 /*=== Setters ===*/
 void SbemHvacSystem::addZone(SbemZone zone) {
 	zones.push(std::make_shared<SbemZone>(zone));
-	_area += zone.getArea();
+	_area += zone.area();
 }
 
 std::string SbemHvacSystem::toString(){
@@ -93,11 +94,14 @@ std::string SbemHvacSystem::toString(){
 		object += "\n" + zones.objects[zoneID]->toString();
 	return object;
 }
+HvacSystemType SbemHvacSystem::hvacSystemType() {
+	return HvacSystemType::DICTIONARY[getStringProperty("TYPE")->getValue()];
+}
 //=== Has things methods === //
 
 //-> Has things
 bool SbemHvacSystem::hasCooling() {
-	return true;
+	return hvacSystemType().hasCooling();
 }
 bool SbemHvacSystem::hasHeating() {
 	return getStringProperty("TYPE")->getValue() != NO_HEATING_OR_COOLING;

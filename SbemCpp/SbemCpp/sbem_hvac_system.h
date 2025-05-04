@@ -5,6 +5,7 @@
 // Native
 
 // Project
+#include "hvac_system_type.h"
 #include "sbem_object.h"
 #include "sbem_object_set.h"
 #include "sbem_zone.h"
@@ -100,6 +101,8 @@ public:
 	/* Zones whose heating, cooling and ventilation is served by this system */
 	SbemObjectSet<SbemZone> zones;
 	/*=== Getters ===*/
+	// References
+	HvacSystemType hvacSystemType();
 	/* 
 		Get area
 		

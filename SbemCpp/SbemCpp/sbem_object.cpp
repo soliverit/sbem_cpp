@@ -36,7 +36,7 @@ SbemObject::SbemObject(std::string objectName, std::vector<std::string> property
 		value					= value.substr(valueStart, valueEnd - valueStart + 1);	
 		
 		if(std::regex_match(value, numberPattern))
-			addNumericProperty(property, std::stof(value));
+			addNumericProperty(key, std::stof(value));
 		else
 			addStringProperty(key, value);
 	}

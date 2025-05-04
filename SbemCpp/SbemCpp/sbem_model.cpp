@@ -208,7 +208,6 @@ SbemModel SbemModel::parseInpContent(const std::string& content) {
 	/*
 		Send it home... and do whatever finishing moves.
 	*/
-	std::cout << "\nDFJDSLFJ:DSJFL:KSDJFLKJSDKLJF\nKLJDFJSDFJLSDJFLKJSDL:KFJ\nJDFKJDSLJFLSDJFKLSDJF";
 	return model;
 }
 SbemModel SbemModel::parseInpFile(const std::string& path) {

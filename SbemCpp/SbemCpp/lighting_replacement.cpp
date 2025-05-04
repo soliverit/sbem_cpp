@@ -23,7 +23,7 @@ float LightingReplacement::cost() {
 	float totalCost = 0;
 	for (size_t zoneID = 0; zoneID < modifiedZones.size(); zoneID++) {
 		SbemZone zone	= *modifiedZones[zoneID];
-		totalCost = unitCost * zone.getArea();
+		totalCost = unitCost * zone.area();
 	}
 	return totalCost;
 }

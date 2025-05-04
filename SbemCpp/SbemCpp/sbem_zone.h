@@ -88,5 +88,7 @@ public:
 	SbemObjectSet<SbemWall> walls;
 	/*=== Getters ===*/ 
 	/* Get AREA * MULTIPLIER */
-	float getArea();
+	float area();
+protected:
+	float _area;
 };

@@ -8,9 +8,9 @@
 #include <memory>  // For shared_ptr
 // Project
 #include "sbem_object.h"
-//#include "hvac_system_type.h"
-//#include "sbem_zone.h"
-//#include "sbem_object_set.h"
+#include "hvac_system_type.h"
+#include "sbem_zone.h"
+#include "sbem_object_set.h"
 /*
 	SBEM HVAC system
 
@@ -113,15 +113,15 @@ public:
 		addZone and removeZone methods. Which increase or decrease the area,
 		respectively.
 	*/
-	//float area();
-	//float wallArea();
-	//float wallSurfaceArea();
-	//float windowArea();
-	////-> Has things
-	//bool hasCooling();
-	//bool hasHeating();
-	//bool hasMechanicalVentiliation();
-	//bool hasMechanicalVentilationAndCooling();
+	float area();
+	float wallArea();
+	float wallSurfaceArea();
+	float windowArea();
+	//-> Has things
+	bool hasCooling();
+	bool hasHeating();
+	bool hasMechanicalVentiliation();
+	bool hasMechanicalVentilationAndCooling();
 
 	/*=== The rest ===*/
 	/*

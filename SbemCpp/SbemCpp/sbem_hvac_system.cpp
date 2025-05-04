@@ -81,25 +81,25 @@ const std::string SbemHvacSystem::OBJECT_NAME = "HVAC-SYSTEM";
 /*=== Getters ===*/
 /*=========== Areas ============*/
 
-//float SbemHvacSystem::area() { return _area; }
-//float SbemHvacSystem::wallArea() {
-//	float totalArea;
-//	for(size_t zoneID = 0; zoneID < zones.size(); zoneID++)
-//		totalArea	+= zones.objects[zoneID]->wallArea();
-//	return totalArea;
-//}
-//float SbemHvacSystem::wallSurfaceArea() {
-//	float totalArea;
-//	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
-//		totalArea += zones.objects[zoneID]->wallSurfaceArea();
-//	return totalArea;
-//}
-//float SbemHvacSystem::windowArea() {
-//	float totalArea;
-//	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
-//		totalArea += zones.objects[zoneID]->windowArea();
-//	return totalArea;
-//}
+float SbemHvacSystem::area() { return _area; }
+float SbemHvacSystem::wallArea() {
+	float totalArea = 0;
+	for(size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+		totalArea	+= zones.objects[zoneID]->wallArea();
+	return totalArea;
+}
+float SbemHvacSystem::wallSurfaceArea() {
+	float totalArea = 0;
+	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+		totalArea += zones.objects[zoneID]->wallSurfaceArea();
+	return totalArea;
+}
+float SbemHvacSystem::windowArea() {
+	float totalArea = 0;
+	for (size_t zoneID = 0; zoneID < zones.size(); zoneID++)
+		totalArea += zones.objects[zoneID]->windowArea();
+	return totalArea;
+}
 /*=== Setters ===*/
 void SbemHvacSystem::addZone(SbemZone zone) {
 	zones.push(std::make_shared<SbemZone>(zone));
@@ -119,7 +119,7 @@ HvacSystemType SbemHvacSystem::hvacSystemType() {
 //=== Has things methods === //
 
 //-> Has things
-/*bool Sb*//*emHvacSystem::hasCooling() {
+bool SbemHvacSystem::hasCooling() {
 	return hvacSystemType().hasCooling();
 }
 bool SbemHvacSystem::hasHeating() {
@@ -130,5 +130,5 @@ bool SbemHvacSystem::hasMechanicalVentiliation() {
 }
 bool SbemHvacSystem::hasMechanicalVentilationAndCooling() {
 	return true;
-}*/
+}
 /*=== The rest ===*/ 

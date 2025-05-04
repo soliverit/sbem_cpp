@@ -77,7 +77,7 @@ public:
 	/*=== Instance methods ===*/
 	/*
 		Convert ZONE to String
-		
+
 		Zones have walls. In addition to creating this SbemZone's SBEM object, it calls all
 		walls' toString() and appends them to its object.
 	*/
@@ -86,8 +86,9 @@ public:
 	SbemActivityData activity;
 	/* Zones always have walls. Store them here */
 	SbemObjectSet<SbemWall> walls;
-	/*=== Getters ===*/ 
+	/*=== Getters ===*/
 	/* Get AREA * MULTIPLIER */
+
 	float area();
 	float wallArea();
 	float wallSurfaceArea();
@@ -98,4 +99,4 @@ protected:
 	float _wallSurfaceArea;
 	float _windowArea;
 	bool _gotWallArea = false;
-}
+};

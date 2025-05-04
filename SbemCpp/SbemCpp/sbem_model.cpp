@@ -316,13 +316,13 @@ float SbemModel::mechVentAreaCool() {
 	return area;
 }
 float SbemModel::wallArea() {
-	float totalArea;
+	float totalArea = 0;
 	for(size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
 		totalArea	+= hvacs.objects[hvacID]->wallArea();
 	return totalArea;
 }
 float SbemModel::wallSurfaceArea() {
-	float totalArea;
+	float totalArea = 0;
 	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
 		totalArea += hvacs.objects[hvacID]->wallSurfaceArea();
 	return totalArea;

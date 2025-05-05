@@ -1,9 +1,13 @@
 #include "hvac_system_type.h"
 /* Constructors */
 /* Static members */
+// Systems with no heating or cooling have this description
 std::string HvacSystemType::NO_HEATING_OR_COOLING       ="No Heating or Cooling";
+// Systems with no cooling have this cooling description
 std::string HvacSystemType::NO_COOLING_TEXT             = "This HVAC system does not provide cooling";
+// Systems with no mechnical ventilation have this ventilation description
 std::string HvacSystemType::NO_MECH_VENTILATION_TEXT    = "This HVAC system does not provide ventilation";
+// HVAC-SYSTEM: TYPE property reference. Use TYPE to find the right HvacSystemType
 std::unordered_map<std::string, HvacSystemType> HvacSystemType::DICTIONARY = {
     {"Central heating using water: radiators", HvacSystemType{1, 1.0, "Central heating using water: radiators", 1, 1, false, -1, 0.58, 1, 1, 1.0, -1, -1, 1.0, -1, -1, 2.0, 1.0, 0.95, 1, 1.0, -1, -1, 1.0, -1, -1, 0.65, 1, 0.95, 1, 1.0, -1, -1, 1.0, -1, -1, 1, 0.95, 1, "Central heat generator(s) with water distribution", "For this HVAC system, Ventilation is defined at zone level", "This HVAC system does not provide cooling", "This HVAC system does not provide ventilation", "", ""}},
     {"Central heating using air distribution", HvacSystemType{2, 4.0, "Central heating using air distribution", 1, 1, false, -1, 0.7, 1, 0, 1.0, -1, -1, 1.0, -1, -1, 2.0, 1.0, 0.95, 1, 0.678, 0.107, 3.0, 0.837, 0.816, 0.2, 0.65, 1, 0.95, 1, 0.036, 0.321, 3.0, 0.839, 0.804, 0.2, 1, 0.95, 1, "Central heat generator(s) with air distribution", "", "This HVAC system does not provide cooling", "", "Ventilation is defined at HVAC level", ""}},
@@ -39,6 +43,9 @@ std::unordered_map<std::string, HvacSystemType> HvacSystemType::DICTIONARY = {
     {"Passive chilled beams", HvacSystemType{36, -1, "Passive chilled beams", 2, 2, true, 1.68, 0.56, 1, 2, 1.068, -0.023, 3.0, 0.981, 0.095, 0.2, 2.0, 1.0, 0.95, 1, 0.938, 0.021, 3.0, 0.977, 0.113, 0.2, 0.65, 1, 0.95, 1, 0.25, 0.25, 3.0, 0.875, 0.625, 0.2, 1, 0.95, 1, "The combination of a chilled ceiling (or passive chilled beam) system with a separate low-level, low volume supply of cooled ventilation air. Heating assumed to be by separate LTHW system.", "", "", "", "Ventilation is defined at HVAC level", ""}},
 };
 /* Instance methods */
+// System has heating
 bool HvacSystemType::hasHeating() const{return CODE != NO_HEATING_OR_COOLING;}
+// System supports cooling, not necessarily producing it. Like a split with wet radiators doesn't
 bool HvacSystemType::hasCooling() const  {return HVAC_cool_text != NO_COOLING_TEXT;}
+// System has mechanical ventilation
 bool HvacSystemType::hasMechanicalVentilation() const{return HVAC_vent_text != NO_MECH_VENTILATION_TEXT;}

@@ -121,6 +121,7 @@ SbemModel SbemModel::parseInpContent(const std::string& content) {
 		/*
 			Do object stuff
 		*/
+		// If we're not currently processing an object. See if we should and do it if necessary
 		if (!inObject) {
 			std::tuple<bool, std::string, std::string> headerLine = SbemObject::isHeaderLine(line);
 			if (std::get<0>(headerLine)){
@@ -130,10 +131,13 @@ SbemModel SbemModel::parseInpContent(const std::string& content) {
 				currentProperties.clear();
 				
 			}
+		// If we're already processing an object
 		}else if (inObject) {
+			// If the current line closes the object. It is ".."
 			if (SbemObject::isCloseLine(line)) {
 				inObject = false;
 				std::string_view objectType = currentType;
+				// Do SbemObject type-specific actions.
 				if (objectType == SbemCompliance::OBJECT_NAME) {
 					model.compliance = SbemCompliance(currentName, currentProperties);
 				}
@@ -230,31 +234,39 @@ SbemModel SbemModel::parseInpFile(const std::string& path) {
 	return parseInpContent(content);
 }
 std::string SbemModel::toString() {
-	/*std::cout << "\nSbemModel::toString() exits for testing at opening line\n";
-	return "";*/
 	std::stringstream content;
+	// Add SBEM-PROJECT object
 	content << general.toString();
+	// Add COMPLIANCE object
 	content << "\n" << compliance.toString();
+	// Add CONSTRUCTION objects 
 	for (size_t constructionID = 0; constructionID < constructions.size(); constructionID++)
 		content << "\n" << constructions.objects[constructionID]->toString();
+	// Add GLASS objects
 	for (size_t glassID = 0; glassID < glasses.objects.size(); glassID++)
 		content << "\n" << glasses.objects[glassID]->toString();
+	// Add SES solar water if it's present
 	if(hasSes)
 		content << "\n" << ses.toString();
+	// Add PVS solar panels if they're present
 	if(hasPvs)
 		content << "\n" << pvs.toString();
+	// Add WIND-TURBINE if it's present. 15 years, never seen it
 	if(hasWindGenerator)
 		content << "\n" << windGenerator.toString();
+	// Add showers if they're present
 	for (size_t showerID = 0; showerID < showers.size(); showerID++)
 		content << "\n" << showers.objects[showerID]->toString();
+	// Add DHW-GENERATOR objects
 	for (size_t dhwID = 0; dhwID < dhws.size(); dhwID++)
 		content << "\n" << dhws.objects[dhwID]->toString();
+	// Add HVAC-SYSTEM objects. Includes ZONE, WALL, WINDOW, DOOR, DORR-TM-BRIDGE, WINDOW-TM-BRIDGE
 	for (size_t hvacID = 0; hvacID < hvacs.size(); hvacID++)
 		content << "\n" << hvacs.objects[hvacID]->toString();
+	// Add REC-USER objects
 	for (size_t recUserID = 0; recUserID < recUsers.size(); recUserID++)
 		content << "\n" << recUsers.objects[recUserID]->toString();
-	for (size_t recUserID = 0; recUserID < recUsers.size(); recUserID++)
-		content << "\n" << recUsers.objects[recUserID]->toString();
+	// ADD IMPROVEMENT-MEASURE objects
 	for (size_t improvementID = 0; improvementID < improvementMeasures.size(); improvementID++)
 		content << "\n" << improvementMeasures.objects[improvementID]->toString();
 	return content.str();

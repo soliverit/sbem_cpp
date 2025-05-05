@@ -16,10 +16,14 @@ class LightingReplacement : public SbemImprover {
 public:
 	LightingReplacement();
 	LightingReplacement(float lampUnitCost);
-
+	/*=== Instance methods ===*/
+	// Apply the retrofit to the target model
 	virtual void apply() override;
+	// Calculate the retrofit cost
 	virtual float cost() override;
 protected:
+	// For tracking modified zones.
 	std::vector<std::shared_ptr<SbemZone>> modifiedZones;
+	// Cost per m2
 	float unitCost;
 };

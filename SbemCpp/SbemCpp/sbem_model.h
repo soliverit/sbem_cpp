@@ -80,14 +80,11 @@ public:
 	float wallSurfaceAreaCool();
 	float windowArea();
 	float windowAreaCool();
-	// Envelopes
+	// Envelopes - Electric equivalents
 	float averageWallUValue();
 	float averageWallUValueCool();
 	float averageWindowUValue();
 	float averageWindowUValueCool();
-	//- Equivalents
-	float electricEquivalentAverageWallUValue();
-	float electricEquivalentAverageWindoeUValue();
 	
 	// Heating and cooling
 	float averageSSEFF();

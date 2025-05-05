@@ -1,17 +1,36 @@
 #pragma once
 #include <iostream>
 #include <unordered_map>
+/*
+    HVAC System Type
+
+    A struct with SBEM Database HVAC-SYSTEM:TYPE property data. Records
+    contain defaults and descriptions for HVAC systems. For example, can be used
+    mixed-mode, has ventilation and cooling etc.
+
+    TODO: Make this a SBEM version thing for v5 and v6 SBEM
+*/
 struct HvacSystemType {
     /* Static members */
+    // Dictionary to lookup up structs based on .inp HVAC-SYSTEM:TYPE property
     static std::unordered_map<std::string, HvacSystemType> DICTIONARY;
+    // String used to determine if the HVAC type has no heating or cooling
     static std::string NO_HEATING_OR_COOLING;
+    // String used to determine if the HVAC type has no cooling
     static std::string NO_COOLING_TEXT;
+    // String used to determine if the HVAC type has no mechanical ventilation
     static std::string NO_MECH_VENTILATION_TEXT;
     /* Instance methods */
+    // Does the system  support cooling (not necessarily has it.
     bool hasCooling() const;
+    // Does the system have heating
     bool hasHeating() const;
+    // Does the system have mechanical ventilation
     bool hasMechanicalVentilation() const;
     /* Instance members */
+    /*
+        Struct Properties from the SBEM database table. 
+    */
     float ID;
     float ORDER;
     std::string CODE;

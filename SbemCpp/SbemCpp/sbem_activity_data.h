@@ -1,3 +1,10 @@
+/*
+    SBEM ZONE Activity type data
+
+    NCM Activity space data. Properties associated with ZONE object linked by the ACTIVITY property
+
+    Includes fresh air rate, occupancy density and schedules, and design illuminance
+*/
 struct SbemActivityData {
     static std::unordered_map<int, SbemActivityData> DICTIONARY;
     float ID;

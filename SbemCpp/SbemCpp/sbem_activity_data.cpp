@@ -2,7 +2,11 @@
 #include <unordered_map>
 
 #include "sbem_activity_data.h"
+/*
+    SBEM ZONE Activity type data
 
+    NCM Activity space data. Properties associated with ZONE object linked by the ACTIVITY property
+*/
 std::unordered_map<int, SbemActivityData> SbemActivityData::DICTIONARY = {
     {1000, SbemActivityData{864, 1000, 53, "Store Room", "B1 Offices and Workshop businesses", "Offices and Workshop businesses", "Offices and Workshop businesses", "B1_Store", false, 50, false, true, false, true, false, 3, 0, 0, 0, "Areas for un-chilled goods storage with low transient occupancy.", 0.025, 10.0, 0.0, 0.0, 23, 20, 8, 17, 8, 17, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}},
     {1001, SbemActivityData{865, 1001, 53, "Circulation area (corridors and stairways)", "B1 Offices and Workshop businesses", "Offices and Workshop businesses", "Offices and Workshop businesses", "B1_Circulation", false, 100, false, false, false, true, false, 3, 0, 0, 0, "For corridors and stairways when these are separated  from Office spaces, e.g. stairwells for access to other parts of the building.", 0.117333333, 10.0, 0.0, 1.85, 23, 20, 7, 18, 7, 18, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 1.0, 1.0, 1.0, 0.75, 0.75, 1.0, 1.0, 1.0, 0.5, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0}},

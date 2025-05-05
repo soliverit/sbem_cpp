@@ -29,8 +29,11 @@ public:
 	/*=== Static members ===*/
 	static const std::string OBJECT_NAME;
 	/*=== Instance methods ===*/
+	// Add a DOOR-TM-BRIDGE object
 	void setThermalBridge(SbemDoorTmBridge thermalBridge);
+	// Check for a DOOR-TM-BRIDGE
 	bool hasThermalBridge();
+	// Attach the SbemConstruction object
 	void setConstruction(std::shared_ptr<SbemConstruction> cons);
 	/* Convert to an .inp object */
 	std::string toString();
